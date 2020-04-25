@@ -1,25 +1,19 @@
-!/usr/bin/env sh
-
-# 终止一个错误
+# 确保脚本抛出遇到的错误
 set -e
 
-# 构建
-npm run docs:build
+# 打包生成静态文件
+npm run build
 
-# 进入生成的构建文件夹
+# 进入打包好的文件夹
 cd docs/.vuepress/dist
 
-# 如果你是要部署到自定义域名
-# echo 'www.example.com' > CNAME
-
+# 创建git的本地仓库，提交修改
 git init
 git add -A
 git commit -m 'deploy'
 
-# 如果你想要部署到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# 如果你想要部署到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+# 覆盖式地将本地仓库发布至github，因为发布不需要保留历史记录
+# 格式为：git push -f git@github.com:'用户名'/'仓库名'.git master
+git push -f git@github.com:RuiYoung/ruiyoung.github.io/web.git master
 
 cd -
