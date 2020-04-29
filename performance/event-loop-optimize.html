@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Event Loop 与异步更新策略(从Event Loop中着手性能优化) | 前端知识架构</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/web/favicon.ico">
+    <meta name="description" content="一份耕耘，一份收获">
+    <link rel="preload" href="/web/assets/css/0.styles.2154e1d6.css" as="style"><link rel="preload" href="/web/assets/js/app.8467f5ab.js" as="script"><link rel="preload" href="/web/assets/js/2.8d3b33bd.js" as="script"><link rel="preload" href="/web/assets/js/43.ceab86cf.js" as="script"><link rel="prefetch" href="/web/assets/js/10.7a01bfe0.js"><link rel="prefetch" href="/web/assets/js/11.9434c272.js"><link rel="prefetch" href="/web/assets/js/12.9e6f10b2.js"><link rel="prefetch" href="/web/assets/js/13.fe0ef855.js"><link rel="prefetch" href="/web/assets/js/14.302f4517.js"><link rel="prefetch" href="/web/assets/js/15.660f56d4.js"><link rel="prefetch" href="/web/assets/js/16.46fc2947.js"><link rel="prefetch" href="/web/assets/js/17.d3cd12e3.js"><link rel="prefetch" href="/web/assets/js/18.8494a138.js"><link rel="prefetch" href="/web/assets/js/19.3a3d2df5.js"><link rel="prefetch" href="/web/assets/js/20.f5a53c39.js"><link rel="prefetch" href="/web/assets/js/21.030b82b6.js"><link rel="prefetch" href="/web/assets/js/22.d8388d13.js"><link rel="prefetch" href="/web/assets/js/23.fbc73fa5.js"><link rel="prefetch" href="/web/assets/js/24.e744a1f2.js"><link rel="prefetch" href="/web/assets/js/25.42103518.js"><link rel="prefetch" href="/web/assets/js/26.f7f69a1c.js"><link rel="prefetch" href="/web/assets/js/27.e99a3e44.js"><link rel="prefetch" href="/web/assets/js/28.909292b8.js"><link rel="prefetch" href="/web/assets/js/29.ad2475de.js"><link rel="prefetch" href="/web/assets/js/3.ccafea9f.js"><link rel="prefetch" href="/web/assets/js/30.d8597d9b.js"><link rel="prefetch" href="/web/assets/js/31.35764e69.js"><link rel="prefetch" href="/web/assets/js/32.bded8736.js"><link rel="prefetch" href="/web/assets/js/33.ed94c720.js"><link rel="prefetch" href="/web/assets/js/34.73a7c58c.js"><link rel="prefetch" href="/web/assets/js/35.513744f0.js"><link rel="prefetch" href="/web/assets/js/36.54a10e5d.js"><link rel="prefetch" href="/web/assets/js/37.0b875606.js"><link rel="prefetch" href="/web/assets/js/38.d1fd942d.js"><link rel="prefetch" href="/web/assets/js/39.391eb545.js"><link rel="prefetch" href="/web/assets/js/4.b7e6892f.js"><link rel="prefetch" href="/web/assets/js/40.6b58055b.js"><link rel="prefetch" href="/web/assets/js/41.18a47a08.js"><link rel="prefetch" href="/web/assets/js/42.bdc55719.js"><link rel="prefetch" href="/web/assets/js/44.3f570633.js"><link rel="prefetch" href="/web/assets/js/45.cf947904.js"><link rel="prefetch" href="/web/assets/js/46.d54563a9.js"><link rel="prefetch" href="/web/assets/js/47.295b8176.js"><link rel="prefetch" href="/web/assets/js/48.dcecab73.js"><link rel="prefetch" href="/web/assets/js/49.30ed491b.js"><link rel="prefetch" href="/web/assets/js/5.98ae611d.js"><link rel="prefetch" href="/web/assets/js/6.a45f1e7c.js"><link rel="prefetch" href="/web/assets/js/7.749a3a54.js"><link rel="prefetch" href="/web/assets/js/8.17709c3b.js"><link rel="prefetch" href="/web/assets/js/9.69409426.js">
+    <link rel="stylesheet" href="/web/assets/css/0.styles.2154e1d6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web/" class="home-link router-link-active"><!----> <span class="site-name">前端知识架构</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/web/basic/JavaScript/" class="nav-link">
+  基础知识
+</a></div><div class="nav-item"><a href="/web/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/web/net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/web/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/web/vue/" class="nav-link">
+  Vue
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/web/basic/JavaScript/" class="nav-link">
+  基础知识
+</a></div><div class="nav-item"><a href="/web/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/web/net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/web/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/web/vue/" class="nav-link">
+  Vue
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/web/performance/" class="sidebar-heading clickable router-link-active open"><span>前端性能优化</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/performance/browser-optimize.html" class="sidebar-link">解锁浏览器背后的运行机制</a></li><li><a href="/web/performance/cdn-optimize.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/web/performance/dom-optimize.html" class="sidebar-link">DOM 优化原理与基本实践</a></li><li><a href="/web/performance/event-loop-optimize.html" class="active sidebar-link">Event Loop 与异步更新策略</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/performance/event-loop-optimize.html#每一次循环都是一个这样的过程：" class="sidebar-link">每一次循环都是一个这样的过程：</a></li><li class="sidebar-sub-header"><a href="/web/performance/event-loop-optimize.html#渲染的时机" class="sidebar-link">渲染的时机</a></li><li class="sidebar-sub-header"><a href="/web/performance/event-loop-optimize.html#异步更新策略" class="sidebar-link">异步更新策略</a></li></ul></li><li><a href="/web/performance/picture-optimize.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/web/performance/process.html" class="sidebar-link">浏览器加载流程</a></li><li><a href="/web/performance/ssr-optimize.html" class="sidebar-link">服务端渲染的探索与实践</a></li><li><a href="/web/performance/storage-optimize.html" class="sidebar-link">本地存储——从 Cookie 到 Web Storage、IndexedD</a></li><li><a href="/web/performance/webpack-optimize.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="event-loop-与异步更新策略-从event-loop中着手性能优化"><a href="#event-loop-与异步更新策略-从event-loop中着手性能优化" class="header-anchor">#</a> Event Loop 与异步更新策略(从Event Loop中着手性能优化)</h1> <blockquote><p>Micro-Task 与 Macro-Task</p> <blockquote><p>事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。<br>
+常见的 macro-task 比如： setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作、UI 渲染等。<br>
+常见的 micro-task 比如: process.nextTick、Promise、MutationObserver 等。</p></blockquote></blockquote> <h2 id="每一次循环都是一个这样的过程："><a href="#每一次循环都是一个这样的过程：" class="header-anchor">#</a> 每一次循环都是一个这样的过程：</h2> <p>将一个macro-task执行并出队 =》将一队micro-task执行并出队 =》 执行渲染操作，更新界面=》处理worker相关的任务</p> <h2 id="渲染的时机"><a href="#渲染的时机" class="header-anchor">#</a> 渲染的时机</h2> <p>我们更新 DOM 的时间点，应该尽可能靠近渲染的时机。当我们需要在异步任务中实现 DOM 修改时，把它包装成 micro 任务是相对明智的选择。</p> <h2 id="异步更新策略"><a href="#异步更新策略" class="header-anchor">#</a> 异步更新策略</h2> <p>当我们使用 Vue 或 React 提供的接口去更新数据时，这个更新并不会立即生效，而是会被推入到一个队列里。待到适当的时机，队列中的更新任务会被批量触发。这就是异步更新。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/29/2020, 6:37:52 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/performance/dom-optimize.html" class="prev">
+        DOM 优化原理与基本实践
+      </a></span> <span class="next"><a href="/web/performance/picture-optimize.html">
+        图片优化——质量与性能的博弈
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/web/assets/js/app.8467f5ab.js" defer></script><script src="/web/assets/js/2.8d3b33bd.js" defer></script><script src="/web/assets/js/43.ceab86cf.js" defer></script>
+  </body>
+</html>

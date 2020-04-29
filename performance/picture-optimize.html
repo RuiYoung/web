@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>图片优化——质量与性能的博弈(如何从图片格式选取着手性能优化) | 前端知识架构</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/web/favicon.ico">
+    <meta name="description" content="一份耕耘，一份收获">
+    <link rel="preload" href="/web/assets/css/0.styles.2154e1d6.css" as="style"><link rel="preload" href="/web/assets/js/app.8467f5ab.js" as="script"><link rel="preload" href="/web/assets/js/2.8d3b33bd.js" as="script"><link rel="preload" href="/web/assets/js/44.3f570633.js" as="script"><link rel="prefetch" href="/web/assets/js/10.7a01bfe0.js"><link rel="prefetch" href="/web/assets/js/11.9434c272.js"><link rel="prefetch" href="/web/assets/js/12.9e6f10b2.js"><link rel="prefetch" href="/web/assets/js/13.fe0ef855.js"><link rel="prefetch" href="/web/assets/js/14.302f4517.js"><link rel="prefetch" href="/web/assets/js/15.660f56d4.js"><link rel="prefetch" href="/web/assets/js/16.46fc2947.js"><link rel="prefetch" href="/web/assets/js/17.d3cd12e3.js"><link rel="prefetch" href="/web/assets/js/18.8494a138.js"><link rel="prefetch" href="/web/assets/js/19.3a3d2df5.js"><link rel="prefetch" href="/web/assets/js/20.f5a53c39.js"><link rel="prefetch" href="/web/assets/js/21.030b82b6.js"><link rel="prefetch" href="/web/assets/js/22.d8388d13.js"><link rel="prefetch" href="/web/assets/js/23.fbc73fa5.js"><link rel="prefetch" href="/web/assets/js/24.e744a1f2.js"><link rel="prefetch" href="/web/assets/js/25.42103518.js"><link rel="prefetch" href="/web/assets/js/26.f7f69a1c.js"><link rel="prefetch" href="/web/assets/js/27.e99a3e44.js"><link rel="prefetch" href="/web/assets/js/28.909292b8.js"><link rel="prefetch" href="/web/assets/js/29.ad2475de.js"><link rel="prefetch" href="/web/assets/js/3.ccafea9f.js"><link rel="prefetch" href="/web/assets/js/30.d8597d9b.js"><link rel="prefetch" href="/web/assets/js/31.35764e69.js"><link rel="prefetch" href="/web/assets/js/32.bded8736.js"><link rel="prefetch" href="/web/assets/js/33.ed94c720.js"><link rel="prefetch" href="/web/assets/js/34.73a7c58c.js"><link rel="prefetch" href="/web/assets/js/35.513744f0.js"><link rel="prefetch" href="/web/assets/js/36.54a10e5d.js"><link rel="prefetch" href="/web/assets/js/37.0b875606.js"><link rel="prefetch" href="/web/assets/js/38.d1fd942d.js"><link rel="prefetch" href="/web/assets/js/39.391eb545.js"><link rel="prefetch" href="/web/assets/js/4.b7e6892f.js"><link rel="prefetch" href="/web/assets/js/40.6b58055b.js"><link rel="prefetch" href="/web/assets/js/41.18a47a08.js"><link rel="prefetch" href="/web/assets/js/42.bdc55719.js"><link rel="prefetch" href="/web/assets/js/43.ceab86cf.js"><link rel="prefetch" href="/web/assets/js/45.cf947904.js"><link rel="prefetch" href="/web/assets/js/46.d54563a9.js"><link rel="prefetch" href="/web/assets/js/47.295b8176.js"><link rel="prefetch" href="/web/assets/js/48.dcecab73.js"><link rel="prefetch" href="/web/assets/js/49.30ed491b.js"><link rel="prefetch" href="/web/assets/js/5.98ae611d.js"><link rel="prefetch" href="/web/assets/js/6.a45f1e7c.js"><link rel="prefetch" href="/web/assets/js/7.749a3a54.js"><link rel="prefetch" href="/web/assets/js/8.17709c3b.js"><link rel="prefetch" href="/web/assets/js/9.69409426.js">
+    <link rel="stylesheet" href="/web/assets/css/0.styles.2154e1d6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web/" class="home-link router-link-active"><!----> <span class="site-name">前端知识架构</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/web/basic/JavaScript/" class="nav-link">
+  基础知识
+</a></div><div class="nav-item"><a href="/web/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/web/net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/web/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/web/vue/" class="nav-link">
+  Vue
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/web/basic/JavaScript/" class="nav-link">
+  基础知识
+</a></div><div class="nav-item"><a href="/web/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/web/net/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/web/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/web/vue/" class="nav-link">
+  Vue
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/web/performance/" class="sidebar-heading clickable router-link-active open"><span>前端性能优化</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/performance/browser-optimize.html" class="sidebar-link">解锁浏览器背后的运行机制</a></li><li><a href="/web/performance/cdn-optimize.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/web/performance/dom-optimize.html" class="sidebar-link">DOM 优化原理与基本实践</a></li><li><a href="/web/performance/event-loop-optimize.html" class="sidebar-link">Event Loop 与异步更新策略</a></li><li><a href="/web/performance/picture-optimize.html" class="active sidebar-link">图片优化——质量与性能的博弈</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/performance/picture-optimize.html#jpeg-jpg" class="sidebar-link">JPEG/JPG</a></li><li class="sidebar-sub-header"><a href="/web/performance/picture-optimize.html#png-8-与-png-24" class="sidebar-link">PNG-8 与 PNG-24</a></li><li class="sidebar-sub-header"><a href="/web/performance/picture-optimize.html#svg" class="sidebar-link">SVG</a></li><li class="sidebar-sub-header"><a href="/web/performance/picture-optimize.html#base64" class="sidebar-link">Base64</a></li><li class="sidebar-sub-header"><a href="/web/performance/picture-optimize.html#webp" class="sidebar-link">WebP</a></li></ul></li><li><a href="/web/performance/process.html" class="sidebar-link">浏览器加载流程</a></li><li><a href="/web/performance/ssr-optimize.html" class="sidebar-link">服务端渲染的探索与实践</a></li><li><a href="/web/performance/storage-optimize.html" class="sidebar-link">本地存储——从 Cookie 到 Web Storage、IndexedD</a></li><li><a href="/web/performance/webpack-optimize.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="图片优化-质量与性能的博弈-如何从图片格式选取着手性能优化"><a href="#图片优化-质量与性能的博弈-如何从图片格式选取着手性能优化" class="header-anchor">#</a> 图片优化——质量与性能的博弈(如何从图片格式选取着手性能优化)</h1> <blockquote><blockquote><p>前置知识：二进制位数与色彩的关系
+在计算机中，像素用二进制数来表示。不同的图片格式中像素与二进制位数之间的对应关系是不同的。一个像素对应的二进制位数越多，它可以表示的颜色种类就越多，成像效果也就越细腻，文件体积相应也会越大。
+一个二进制位表示两种颜色（0|1 对应黑|白），如果一种图片格式对应的二进制位数有 n 个，那么它就可以呈现 2^n 种颜色。</p></blockquote></blockquote> <h2 id="jpeg-jpg"><a href="#jpeg-jpg" class="header-anchor">#</a> JPEG/JPG</h2> <p>关键字：有损压缩、体积小、加载快、不支持透明
+使用场景：
+<strong>JPG 适用于呈现色彩丰富的图片，在我们日常开发中，JPG 图片经常作为大的背景图、轮播图或 Banner 图出现。</strong></p> <h2 id="png-8-与-png-24"><a href="#png-8-与-png-24" class="header-anchor">#</a> PNG-8 与 PNG-24</h2> <p>关键字：无损压缩、质量高、体积大、支持透明
+PNG 图片具有比 JPG 更强的色彩表现力，对线条的处理更加细腻，对透明度有良好的支持。它弥补了上文我们提到的 JPG 的局限性，唯一的 BUG 就是体积太大。
+PNG-8 与 PNG-24 的选择题
+理论上来说，当你追求最佳的显示效果、并且不在意文件体积大小时，是推荐使用 PNG-24 的。
+但实践当中，为了规避体积的问题，我们一般不用PNG去处理较复杂的图像。当我们遇到适合 PNG 的场景时，也会优先选择更为小巧的 PNG-8。
+应用场景:</p> <p><strong>前面我们提到，复杂的、色彩层次丰富的图片，用 PNG 来处理的话，成本会比较高，我们一般会交给 JPG 去存储。
+考虑到 PNG 在处理线条和颜色对比度方面的优势，我们主要用它来呈现小的 Logo、颜色简单且对比强烈的图片或背景等。</strong></p> <h2 id="svg"><a href="#svg" class="header-anchor">#</a> SVG</h2> <p>关键字：文本文件、体积小、不失真、兼容性好
+SVG（可缩放矢量图形）是一种基于 XML 语法的图像格式。它和本文提及的其它图片种类有着本质的不同：SVG 对图像的处理不是基于像素点，而是是基于对图像的形状描述。
+和性能关系最密切的一点就是：SVG 与 PNG 和 JPG 相比，文件体积更小，可压缩性更强。作为矢量图，它最显著的优势还是在于图片可无限放大而不失真这一点上。
+SVG 的局限性主要有两个方面，一方面是它的渲染成本比较高，这点对性能来说是很不利的。另一方面，SVG 存在着其它图片格式所没有的学习成本（它是可编程的）。</p> <p>最经典的小图标解决方案——雪碧图（CSS Sprites）
+图像精灵（sprite，意为精灵），被运用于众多使用大量小图标的网页应用之上。它可取图像的一部分来使用，使得使用一个图像文件替代多个小文件成为可能。相较于一个小图标一个图像文件，单独一张图片所需的 HTTP 请求更少，对内存和带宽更加友好</p> <h2 id="base64"><a href="#base64" class="header-anchor">#</a> Base64</h2> <p>Base64 是一种用于传输 8Bit 字节码的编码方式，通过对图片进行 Base64 编码，我们可以直接将编码结果写入 HTML 或者写入 CSS，从而减少 HTTP 请求的次数。
+Base64弊端
+Base64 编码后，图片大小会膨胀为原文件的 4/3（这是由 Base64 的编码原理决定的）。如果我们把大图也编码到 HTML 或 CSS 文件中，后者的体积会明显增加，即便我们减少了 HTTP 请求，也无法弥补这庞大的体积带来的性能开销，得不偿失。
+满足以下条件时会对它应用 Base64 编码：
+<strong>图片的实际尺寸很小（大家可以观察一下掘金页面的 Base64 图，几乎没有超过 2kb 的）
+图片无法以雪碧图的形式与其它小图结合（合成雪碧图仍是主要的减少 HTTP 请求的途径，Base64 是雪碧图的补充）
+图片的更新频率非常低（不需我们重复编码和修改文件内容，维护成本较低）</strong></p> <h2 id="webp"><a href="#webp" class="header-anchor">#</a> WebP</h2> <p>关键字：年轻的全能型选手
+WebP 像 JPEG 一样对细节丰富的图片信手拈来，像 PNG 一样支持透明，像 GIF 一样可以显示动态图片——它集多种图片文件格式的优点于一身。
+WebP 的局限性
+兼容性差
+WebP 还会增加服务器的负担——和编码 JPG 文件相比，编码同样质量的 WebP 文件会占用更多的计算资源</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/29/2020, 6:37:52 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/performance/event-loop-optimize.html" class="prev">
+        Event Loop 与异步更新策略
+      </a></span> <span class="next"><a href="/web/performance/process.html">
+        浏览器加载流程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/web/assets/js/app.8467f5ab.js" defer></script><script src="/web/assets/js/2.8d3b33bd.js" defer></script><script src="/web/assets/js/44.3f570633.js" defer></script>
+  </body>
+</html>
